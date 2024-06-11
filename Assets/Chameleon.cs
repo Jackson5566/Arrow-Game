@@ -23,10 +23,7 @@ public class Chameleon : MonoBehaviour
 
     public void Change()
     {
-        print(Enum.GetValues(typeof(Color)).Length);
         int color = GetRandomColor();
-        print("COlor elegido: " +
-            color);
         currentColor = (Color)color;
 
         skin = colorSO.skinList.Find(x => x.selectedColor == currentColor);
@@ -49,6 +46,4 @@ public class Chameleon : MonoBehaviour
             return GetRandomColor();
         }
     }
-
-
 }

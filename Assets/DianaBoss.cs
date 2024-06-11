@@ -14,7 +14,7 @@ public class DianaBoss : GameMode
     protected override void Start()
     {
         base.Start();
-
+        SceneTransitions("transition_start");
         eyesActivated = false;
         mouthActivated = false;
     }
@@ -25,6 +25,12 @@ public class DianaBoss : GameMode
 
     protected override void OnCounter(int counter)
     {
+        if (counter < 0)
+        {
+            counter = 0;
+            Lose();
+        }
+
         if (counter == scoreEyes)
         {
             foreach (GameObject eye in eyes)
@@ -44,7 +50,6 @@ public class DianaBoss : GameMode
             }
         }
 
-
         if (counter == scoreMouth)
         {
             mouthActivated = true;
@@ -60,11 +65,12 @@ public class DianaBoss : GameMode
 
     public override void Win()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void Lose()
     {
-        throw new System.NotImplementedException();
+        _isLose = true;
+        SceneTransitions();
+        Invoke("ResetScene", 1.5f);
     }
 }

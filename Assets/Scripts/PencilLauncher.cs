@@ -31,7 +31,10 @@ namespace PencilGame
             {
                 Touch touch = Input.GetTouch(0);
                  
-                if (touch.phase == TouchPhase.Began && _time2Launch == 0 && !GameManager.Instance.isLose && !GameManager.Instance.isWinned && !IsTouchOverUI(touch))
+                if (
+                    touch.phase == TouchPhase.Began && _time2Launch == 0 
+                    && !GameMode.Instance.isLose 
+                    && !GameMode.Instance.isWinned && !IsTouchOverUI(touch))
                 {
                     _time2Launch = _waitingSeconds;
                     InstantiatePencil();

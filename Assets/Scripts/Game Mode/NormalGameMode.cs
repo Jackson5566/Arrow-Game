@@ -1,12 +1,11 @@
 
-using PencilGame;
-
 public class NormalGameMode : GameMode
 {
     public int level;
     protected override void Start()
     {
         base.Start();
+        Counter.Instance.counter += level;
 
         SceneTransitions("transition_start");
     }
@@ -19,7 +18,6 @@ public class NormalGameMode : GameMode
     protected override void OnCounter(int counter)
     {
         if (counter == 0) Win();
-        if (counter == 0) GameManager.Instance.IsWinnded();
     }
 
     public override void Win()

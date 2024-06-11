@@ -1,11 +1,12 @@
 using PencilGame;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Counter : Service<Counter>
 {
-    public Text text;
-    public Animator anim;
+    private TextMeshProUGUI text;
+    private Animator anim;
 
     [SerializeField]
     private static int _counter = 0;
@@ -18,10 +19,10 @@ public class Counter : Service<Counter>
         }
         set
         {
-            print(text);
             _counter = value;
-            text.text = _counter.ToString();
             anim.SetTrigger("set");
+
+            if (_counter >= 0) text.text = _counter.ToString();
             if(OnCounterChanged != null)
                 OnCounterChanged(value);
 
@@ -38,14 +39,10 @@ public class Counter : Service<Counter>
     {
         base.Awake();
 
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
         anim = GetComponent<Animator>();
-    }
 
-    private void Start()
-    {
-        // Esto tampoco
-        counter = initialCounter + GameManager.level;
+        counter = initialCounter;
     }
 
     public void Rest()

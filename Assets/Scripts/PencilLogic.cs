@@ -14,7 +14,7 @@ public class PencilLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Pencil"))
         {
             _animator.SetTrigger("destroyed");
-            GameManager.Instance.IsLose();
+            GameMode.Instance.Lose();
         }
 
         if (collision.gameObject.CompareTag("Diana"))
