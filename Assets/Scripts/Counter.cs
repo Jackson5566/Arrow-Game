@@ -1,9 +1,7 @@
-using PencilGame;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Counter : Service<Counter>
+public class Counter : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private Animator anim;
@@ -35,10 +33,8 @@ public class Counter : Service<Counter>
 
     public static event OnCounter OnCounterChanged;
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
-
         text = GetComponent<TextMeshProUGUI>();
         anim = GetComponent<Animator>();
 

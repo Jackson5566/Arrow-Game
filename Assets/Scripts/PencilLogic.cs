@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PencilLogic : MonoBehaviour
 {
+    public Counter counter;
     private Animator _animator;
 
     private void Start()
@@ -14,13 +15,14 @@ public class PencilLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Pencil"))
         {
             _animator.SetTrigger("destroyed");
-            GameMode.Instance.Lose();
+            GameMode.Instance.OnLose();
         }
 
         if (collision.gameObject.CompareTag("Diana"))
         {
-            Counter.Instance.Rest();
-            Diana.Instance.ChangeDirection();
+            counter.Rest();
+            //Diana.Instance.ChangeDirection();
+            collision.gameObject.GetComponent<Diana>().ChangeDirection();
             transform.SetParent(collision.transform);
             Destroy(GetComponent<PencilMovement>());
             Destroy(this);

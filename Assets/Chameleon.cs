@@ -17,11 +17,11 @@ public class Chameleon : MonoBehaviour
     [SerializeField] private SpriteRenderer[] _spriteRenderers;
 
     public Color currentColor;
-    public ColorSO colorSO;
+    [SerializeField, Header("Color Scriptable Object")] private ColorSO colorSO;
 
     public Skin skin;
 
-    public void Change()
+    public void Change(float alpha = 1)
     {
         int color = GetRandomColor();
         currentColor = (Color)color;
@@ -30,7 +30,9 @@ public class Chameleon : MonoBehaviour
 
         foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
         {
-            spriteRenderer.color = skin.spriteColor;
+            UnityEngine.Color newColor = skin.spriteColor;
+            newColor.a = alpha;
+            spriteRenderer.color = newColor;
         }
     }
 

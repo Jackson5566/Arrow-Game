@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PencilGame
 {
-    public class Diana : Service<Diana>
+    public class Diana : MonoBehaviour
     {
         [SerializeField, Header("Speed of rotation")] private float _startSpeed;
         [SerializeField] private float _speedModifier;
@@ -14,10 +14,10 @@ namespace PencilGame
         private float _time2Modifier;
 
 
-        protected override void Awake()
-        {
-            base.Awake();
-        }
+        //protected override void Awake()
+        //{
+        //    base.Awake();
+        //}
 
         protected void Start()
         {

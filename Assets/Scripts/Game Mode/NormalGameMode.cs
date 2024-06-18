@@ -1,7 +1,8 @@
 
 public class NormalGameMode : GameMode
 {
-    public int level;
+    public static int level;
+
     protected override void Start()
     {
         base.Start();
@@ -17,10 +18,10 @@ public class NormalGameMode : GameMode
 
     protected override void OnCounter(int counter)
     {
-        if (counter == 0) Win();
+        if (counter == 0) OnWin();
     }
 
-    public override void Win()
+    public override void OnWin()
     {
         _isWinned = true;
         SceneTransitions();
@@ -33,7 +34,7 @@ public class NormalGameMode : GameMode
         Invoke("ResetScene", 1.5f);
     }
 
-    public override void Lose()
+    public override void OnLose()
     {
         _isLose = true;
         level = 0;

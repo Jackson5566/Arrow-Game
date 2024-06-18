@@ -5,6 +5,7 @@ using PencilGame;
 public class MulticolorPencilLogic : MonoBehaviour
 {
     private Animator _animator;
+
     [SerializeField] private SpriteRenderer[] _spriteRenderers;
 
     private Skin _skin;
@@ -44,7 +45,8 @@ public class MulticolorPencilLogic : MonoBehaviour
 
                 if (color == _skin.selectedColor)
                 {
-                    Diana.Instance.ChangeDirection();
+                    collision.gameObject.GetComponent<Diana>().ChangeDirection();
+                    //Diana.Instance.ChangeDirection();
                     Counter.Instance.Add();
                     PositiveText.Instance.Show();
                     Effects.Instance.InstantiateConfetti(transform.position);

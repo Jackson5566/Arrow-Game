@@ -11,7 +11,7 @@ public abstract class GameMode : Service<GameMode>
         set
         {
             _isLose = value;
-            if (_isLose) Lose();
+            if (_isLose) OnLose();
         }
     }
 
@@ -22,7 +22,7 @@ public abstract class GameMode : Service<GameMode>
         set
         {
             _isWinned = value;
-            if (_isWinned) Win();
+            if (_isWinned) OnWin();
         }
     }
 
@@ -46,8 +46,8 @@ public abstract class GameMode : Service<GameMode>
     }
 
     protected abstract void OnCounter(int counter);
-    public abstract void Win();
-    public abstract void Lose();
+    public abstract void OnWin();
+    public abstract void OnLose();
 
     protected void SceneTransitions(string trigger = "transition")
     {

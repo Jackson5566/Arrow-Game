@@ -5,9 +5,9 @@ namespace PencilGame
 {
     public class PencilLauncher : Service<PencilLauncher>
     {
-        [SerializeField] private Pencil _pencil;
+        private float _time2Launch;
 
-        [SerializeField] private float _time2Launch = 0.5f;
+        [SerializeField] private Pencil _pencil;
         [SerializeField, Range(0.5f, 5)] private float _waitingSeconds;
         [Header("Launch Speed"), Range(5, 20)] public float speed = 14;
 
@@ -18,7 +18,7 @@ namespace PencilGame
 
         protected virtual void Start()
         {
-
+            _time2Launch = _waitingSeconds;
         }
 
         void Update()
