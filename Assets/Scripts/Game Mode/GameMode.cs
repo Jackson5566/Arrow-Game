@@ -30,6 +30,10 @@ public abstract class GameMode : Service<GameMode>
 
     [SerializeField] public Animator[] _sceneTransitions;
 
+    public Player player;
+
+    public string gameName;
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,6 +41,7 @@ public abstract class GameMode : Service<GameMode>
 
     protected virtual void Start()
     {
+        DataStorage.SaveGameName(gameName);
         Counter.OnCounterChanged += OnCounter;
     }
 
@@ -45,7 +50,7 @@ public abstract class GameMode : Service<GameMode>
         Counter.OnCounterChanged -= OnCounter;
     }
 
-    protected abstract void OnCounter(int counter);
+    protected abstract void OnCounter();
     public abstract void OnWin();
     public abstract void OnLose();
 
@@ -69,4 +74,16 @@ public abstract class GameMode : Service<GameMode>
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    //public void AddPlayerPoint()
+    //{
+    //    playerCounter.Add();
+    //    OnCounter();
+    //}
+
+    //public void RestPlayerPoint()
+    //{
+    //    playerCounter.Rest();
+    //    OnCounter();
+    //}
 }

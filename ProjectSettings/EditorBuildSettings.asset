@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 53e2af6777e9e4f41b81c29157fc438d
   - enabled: 1
+    path: Assets/Scenes/Multiplayer/Multiplayer.unity
+    guid: 16433d392c02bec4fbdde582e2d5e047
+  - enabled: 1
     path: Assets/Scenes/Normal/Circle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

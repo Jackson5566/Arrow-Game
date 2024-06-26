@@ -13,12 +13,6 @@ namespace PencilGame
         private float _speed;
         private float _time2Modifier;
 
-
-        //protected override void Awake()
-        //{
-        //    base.Awake();
-        //}
-
         protected void Start()
         {
             _speed = _startSpeed;
@@ -47,7 +41,7 @@ namespace PencilGame
             {
                 _speed += _speedModifier;
             }
-            print(_speed);
+
             yield return new WaitForSeconds(_speedModifierTime);
             _speed = _startSpeed;
         }

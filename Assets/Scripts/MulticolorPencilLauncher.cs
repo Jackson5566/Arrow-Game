@@ -1,6 +1,5 @@
 using PencilGame;
 using System;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(Chameleon))]

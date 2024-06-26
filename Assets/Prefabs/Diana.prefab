@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5516167907977712306}
   - component: {fileID: 3966947643872751185}
   - component: {fileID: 5582425615004100570}
+  - component: {fileID: 4150388095877344585}
   m_Layer: 0
   m_Name: Diana
   m_TagString: Diana
@@ -177,3 +178,17 @@ MonoBehaviour:
   _speedModifier: 0
   _time2ModifierMax: 0
   _speedModifierTime: 0
+--- !u!114 &4150388095877344585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738689751879162224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5465d07755f41044ba0d9ffeb6e8bc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+  diana: {fileID: 0}

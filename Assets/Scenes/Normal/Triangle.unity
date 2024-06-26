@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diana
       objectReference: {fileID: 0}
+    - target: {fileID: 4150388095877344585, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1996827119}
     - target: {fileID: 5516167907977712306, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0965394
@@ -385,6 +389,14 @@ PrefabInstance:
       value: Game Mode
       objectReference: {fileID: 0}
     - target: {fileID: 4186979215171452738, guid: e5c63c0b90888f446bd6fdd4df99f564, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1996827119}
+    - target: {fileID: 4186979215171452738, guid: e5c63c0b90888f446bd6fdd4df99f564, type: 3}
+      propertyPath: gameName
+      value: Triangle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186979215171452738, guid: e5c63c0b90888f446bd6fdd4df99f564, type: 3}
       propertyPath: _sceneTransitions.Array.data[0]
       value: 
       objectReference: {fileID: 1822076726}
@@ -584,13 +596,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8754677803829021683, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_Name
-      value: Canvas 1
+      value: Counter Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
+--- !u!114 &1553190936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3041864618993269328, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
+  m_PrefabInstance: {fileID: 1553190935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87e9334888429d46aca35004f74da70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1795771303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -757,6 +780,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7965584051365229679, guid: e223a873fc817da488b208d7695e533f, type: 3}
+      propertyPath: name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965584051365229679, guid: e223a873fc817da488b208d7695e533f, type: 3}
+      propertyPath: counter
+      value: 
+      objectReference: {fileID: 1553190936}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -767,6 +798,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 821220702601492714, guid: e223a873fc817da488b208d7695e533f, type: 3}
   m_PrefabInstance: {fileID: 1996827117}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1996827119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7965584051365229679, guid: e223a873fc817da488b208d7695e533f, type: 3}
+  m_PrefabInstance: {fileID: 1996827117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c66d291b9624334f93faff7b36e0ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2103901265
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,48 +6,52 @@ public class Counter : MonoBehaviour
     private TextMeshProUGUI text;
     private Animator anim;
 
-    [SerializeField]
-    private static int _counter = 0;
+    private int _score = 0;
 
-    public int counter
+
+
+    public int score
     {
         get
         {
-            return _counter;
+            return _score;
         }
         set
         {
-            _counter = value;
             anim.SetTrigger("set");
 
-            if (_counter >= 0) text.text = _counter.ToString();
-            if(OnCounterChanged != null)
-                OnCounterChanged(value);
+
+            if (value >= 0)
+            {
+                _score = value;
+                text.text = _score.ToString();
+            }
+            if (OnCounterChanged != null)
+                OnCounterChanged();
 
         }
     }
 
-    public int initialCounter;
-
-    public delegate void OnCounter(int counter);
-
+    public delegate void OnCounter();
     public static event OnCounter OnCounterChanged;
+
+    public int initialCounter;
 
     protected void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
         anim = GetComponent<Animator>();
 
-        counter = initialCounter;
+        score = initialCounter;
     }
 
     public void Rest()
     {
-        counter -= 1;
+        score -= 1;
     }
 
     public void Add()
     {
-        counter += 1;
+        score += 1;
     }
 }

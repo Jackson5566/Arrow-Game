@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using PencilGame;
 
 public class MulticolorPencilLogic : MonoBehaviour
 {
@@ -21,6 +20,8 @@ public class MulticolorPencilLogic : MonoBehaviour
         }
     }
 
+    public Counter counter;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -30,7 +31,6 @@ public class MulticolorPencilLogic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (!(collision.gameObject.tag == "Diana"))
         {
             _animator.SetTrigger("destroyed");
@@ -45,17 +45,13 @@ public class MulticolorPencilLogic : MonoBehaviour
 
                 if (color == _skin.selectedColor)
                 {
-                    collision.gameObject.GetComponent<Diana>().ChangeDirection();
-                    //Diana.Instance.ChangeDirection();
-                    Counter.Instance.Add();
-                    PositiveText.Instance.Show();
-                    Effects.Instance.InstantiateConfetti(transform.position);
+                    collision.gameObject.GetComponent<DianaMulticolorLogic>().OnCollider(transform);
                     transform.SetParent(collision.transform);
                     Destroy(gameObject);
                 }
                 else
                 {
-                    Counter.Instance.Rest();
+                    collision.gameObject.GetComponent<DianaMulticolorLogic>().Subsctract();
                     _animator.SetTrigger("destroyed");
                     Invoke("DestroyGameObject", 1.5f);
                 }
@@ -63,7 +59,7 @@ public class MulticolorPencilLogic : MonoBehaviour
 
             catch (NullReferenceException ex)
             {
-                Debug.Log("Chameleon component is missing !");
+                Debug.LogError(ex);
             }
         }
 

@@ -8,7 +8,7 @@ public class Multicolor : MonoBehaviour
 
     public float timePassed;
 
-    public Chameleon chameleon;
+    private Chameleon chameleon;
 
     private void Start()
     {

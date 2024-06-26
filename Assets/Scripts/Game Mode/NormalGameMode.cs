@@ -6,24 +6,22 @@ public class NormalGameMode : GameMode
     protected override void Start()
     {
         base.Start();
-        Counter.Instance.counter += level;
+
+        player.counter.score += level;
 
         SceneTransitions("transition_start");
     }
 
-    protected override void OnDestroy()
+    protected override void OnCounter()
     {
-        base.OnDestroy();
-    }
-
-    protected override void OnCounter(int counter)
-    {
-        if (counter == 0) OnWin();
+        if (player.counter.score == 0) OnWin();
     }
 
     public override void OnWin()
     {
         _isWinned = true;
+        //DataStorage.SaveGameScore(gameName, player.counter.score);
+
         SceneTransitions();
         LoadNewLevel();
     }

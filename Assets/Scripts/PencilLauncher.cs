@@ -3,18 +3,23 @@ using UnityEngine.EventSystems;
 
 namespace PencilGame
 {
-    public class PencilLauncher : Service<PencilLauncher>
+    public enum TouchCondition
+    {
+        None, 
+        Top,
+        Down
+    }
+
+    public class PencilLauncher : MonoBehaviour
     {
         private float _time2Launch;
 
         [SerializeField] private Pencil _pencil;
         [SerializeField, Range(0.5f, 5)] private float _waitingSeconds;
-        [Header("Launch Speed"), Range(5, 20)] public float speed = 14;
+        [Header("Launch Speed"), Range(-20, 20)] public float speed = 14;
 
-        protected override void Awake()
-        {
-            base.Awake();
-        }
+        public TouchCondition touchCondition;
+
 
         protected virtual void Start()
         {
@@ -30,16 +35,38 @@ namespace PencilGame
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
+
+                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                  
                 if (
                     touch.phase == TouchPhase.Began && _time2Launch == 0 
                     && !GameMode.Instance.isLose 
                     && !GameMode.Instance.isWinned && !IsTouchOverUI(touch))
                 {
-                    _time2Launch = _waitingSeconds;
-                    InstantiatePencil();
+                    if (touchCondition == TouchCondition.Down && touchPosition.y < 0)
+                    {
+                        Launch();
+                    }
 
-                    OnLaunching();
+                    else if (touchCondition == TouchCondition.Top && touchPosition.y > 0)
+                    {
+                        Launch();
+                    }
+
+                    else if(touchCondition == TouchCondition.None)
+                    {
+                        Launch();
+                    }
+
+                    void Launch()
+                    {
+                        _time2Launch = _waitingSeconds;
+                        Pencil pencil = InstantiatePencil();
+                        pencil.GetComponent<PencilMovement>().speed = speed;
+
+                        OnLaunching();
+                    }
+
                 }
             }
         }
@@ -70,7 +97,7 @@ namespace PencilGame
 
         protected virtual Pencil InstantiatePencil()
         {
-            return Instantiate(_pencil, transform.position, Quaternion.identity);
+            return Instantiate(_pencil, transform.position, transform.rotation);
         }
     }
 }

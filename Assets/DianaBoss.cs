@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class Boss
@@ -72,6 +73,8 @@ public class DianaBoss : GameMode
     private int maxLevel = 3;
     public static int currentLevel;
 
+    public PlayableDirector finalBossTimeline;
+
     private void OnValidate()
     {
         maxLevel = boss.Length - 1;
@@ -92,7 +95,6 @@ public class DianaBoss : GameMode
     protected override void Start()
     {
         base.Start();
-
         currentLevel = 0;
 
         SetBoss(previousBossIndex: 0);
@@ -100,21 +102,22 @@ public class DianaBoss : GameMode
 
         currentBoss.Start();
     }
+
     protected override void OnDestroy()
     {
         base.OnDestroy();
         ClearBossEvents();
     }
 
-    protected override void OnCounter(int counter)
+    protected override void OnCounter()
     {
-        if (counter < 0)
+        if (player.counter.score < 0)
         {
-            counter = 0;
+            player.counter.score = 0;
             OnLose();
         }
 
-        currentBoss.OnScore(counter);
+        currentBoss.OnScore(player.counter.score);
     }
 
     private void SetBoss(int previousBossIndex)
@@ -135,6 +138,11 @@ public class DianaBoss : GameMode
 
             currentLevel += 1;
             SetBoss(previousBossIndex: -1);
+        }
+
+        else
+        {
+            finalBossTimeline.Play();
         }
     }
 

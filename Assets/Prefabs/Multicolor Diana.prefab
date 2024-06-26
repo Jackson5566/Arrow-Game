@@ -503,6 +503,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -611,6 +615,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1738689751879162224, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6358612885526611833}
+    - targetCorrespondingSourceObject: {fileID: 1738689751879162224, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6776152004097485060}
   m_SourcePrefab: {fileID: 100100000, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
 --- !u!212 &471828815402847973 stripped
 SpriteRenderer:
@@ -693,6 +700,21 @@ MonoBehaviour:
   time2Pass: 0
   timePassed: 0
   chameleon: {fileID: 0}
+--- !u!114 &6776152004097485060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093501672431151959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f89f04cd5d9942f4382e89355810ffaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  positiveText: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!4 &6593456327819305109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5516167907977712306, guid: 74715bce82a991c41b29f600db9a5428, type: 3}

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 821220702601492714}
   - component: {fileID: 534241135745080397}
   - component: {fileID: 6691855322698899225}
+  - component: {fileID: 7965584051365229679}
   m_Layer: 0
-  m_Name: PencilLauncher
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pencil: {fileID: 3949392309345907029, guid: c73f9ededb02e224bbafffee538082d0, type: 3}
-  _time2Launch: 0
   _waitingSeconds: 0.5
   speed: 14
+  touchCondition: 0
 --- !u!95 &6691855322698899225
 Animator:
   serializedVersion: 5
@@ -71,6 +72,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7965584051365229679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718696064235320535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c66d291b9624334f93faff7b36e0ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+  name: 
 --- !u!1 &2864598523109797975
 GameObject:
   m_ObjectHideFlags: 0
