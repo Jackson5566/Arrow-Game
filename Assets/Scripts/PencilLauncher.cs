@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -19,6 +20,8 @@ namespace PencilGame
         [Header("Launch Speed"), Range(-20, 20)] public float speed = 14;
 
         public TouchCondition touchCondition;
+
+        public event Action onLaunching;
 
 
         protected virtual void Start()
@@ -62,9 +65,14 @@ namespace PencilGame
                     {
                         _time2Launch = _waitingSeconds;
                         Pencil pencil = InstantiatePencil();
-                        pencil.GetComponent<PencilMovement>().speed = speed;
+                        PlayerMovement pen = pencil.GetComponent<PlayerMovement>();
+                        pen.speed = speed;
+                        pen.pos = new Vector2(-transform.position.x, -transform.position.y);
 
                         OnLaunching();
+
+                        if (onLaunching != null)
+                            onLaunching();
                     }
 
                 }

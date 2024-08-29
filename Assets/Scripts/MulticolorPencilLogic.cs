@@ -20,8 +20,6 @@ public class MulticolorPencilLogic : MonoBehaviour
         }
     }
 
-    public Counter counter;
-
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -34,7 +32,7 @@ public class MulticolorPencilLogic : MonoBehaviour
         if (!(collision.gameObject.tag == "Diana"))
         {
             _animator.SetTrigger("destroyed");
-            Invoke("DestroyGameObject", 1.5f);
+            Invoke(nameof(DestroyGameObject), 1.5f);
         }
 
         else
@@ -45,15 +43,15 @@ public class MulticolorPencilLogic : MonoBehaviour
 
                 if (color == _skin.selectedColor)
                 {
-                    collision.gameObject.GetComponent<DianaMulticolorLogic>().OnCollider(transform);
+                    collision.gameObject.GetComponent<AbstractDianaLogic>().OnCollider(transform);
                     transform.SetParent(collision.transform);
                     Destroy(gameObject);
                 }
                 else
                 {
-                    collision.gameObject.GetComponent<DianaMulticolorLogic>().Subsctract();
+                    collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
                     _animator.SetTrigger("destroyed");
-                    Invoke("DestroyGameObject", 1.5f);
+                    Invoke(nameof(DestroyGameObject), 1.5f);
                 }
             }
 
@@ -62,19 +60,6 @@ public class MulticolorPencilLogic : MonoBehaviour
                 Debug.LogError(ex);
             }
         }
-
-        //if (collision.gameObject.CompareTag("Pencil"))
-        //{
-        //    GameManager.Instance.IsLose();
-        //}
-
-        //if (collision.gameObject.CompareTag("Diana"))
-        //{
-        //    Counter.Instance.Rest();
-        //    Diana.Instance.ChangeDirection();
-        //    transform.SetParent(collision.transform);
-        //    Destroy(this);
-        //}
     }
 
     public void DestroyGameObject()

@@ -8,22 +8,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 53e2af6777e9e4f41b81c29157fc438d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Multiplayer/Multiplayer.unity
     guid: 16433d392c02bec4fbdde582e2d5e047
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Normal/Circle.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Normal/Square.unity
     guid: 4c6074f2c060f374a80f7e4c53c5ca8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Normal/Hexagon.unity
     guid: 765a8a2c65549e44797aecb8a198e119
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Normal/Triangle.unity
     guid: dafd0ca0336743347a43689dcc5aaca0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Multicolor/Color.unity
     guid: 9ae3af4106fcf74428b570a894c094c6
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 8e098d47ab2550847ae7f09622225bb2, type: 2}

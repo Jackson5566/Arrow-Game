@@ -1,15 +1,27 @@
 
+using Throw.Core;
+using UnityEngine;
+
 public class NormalGameMode : GameMode
 {
     public static int level;
+
+    public int maxLevel;
+
+    protected override void OnCollider(Transform obj)
+    {
+        player.counter.Rest();
+    }
+
+    protected override void OnNotCollider()
+    {
+    }
 
     protected override void Start()
     {
         base.Start();
 
         player.counter.score += level;
-
-        SceneTransitions("transition_start");
     }
 
     protected override void OnCounter()
@@ -20,17 +32,24 @@ public class NormalGameMode : GameMode
     public override void OnWin()
     {
         _isWinned = true;
-        //DataStorage.SaveGameScore(gameName, player.counter.score);
+        level += 1;
 
-        SceneTransitions();
-        LoadNewLevel();
+        if (level < maxLevel)
+        {
+            LoadNewLevel();
+        }
+        else
+        {
+            SceneLoader.Instance.LoadAsync("Main");
+        }
+
     }
 
     public void LoadNewLevel()
     {
-        level += 1;
-        Invoke("ResetScene", 1.5f);
+        Invoke(nameof(ResetScene), 1.5f);
     }
+
 
     public override void OnLose()
     {
@@ -43,8 +62,7 @@ public class NormalGameMode : GameMode
     public void LoseTransition()
     {
         DeadAnimations();
-        SceneTransitions();
 
-        Invoke("ResetScene", 1.5f);
+        Invoke(nameof(ResetScene), 1.5f);
     }
 }

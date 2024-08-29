@@ -12,13 +12,13 @@ public class MulticolorPencilLauncher : PencilLauncher
     {
         base.Start();
         chameleon = GetComponent<Chameleon>();
-        chameleon.Change(alpha);
+        chameleon.ChangeColor(alpha);
     }
 
     protected override void OnLaunching()
     {
         base.OnLaunching();
-        chameleon.Change(alpha);
+        chameleon.ChangeColor(alpha);
     }
 
     protected override Pencil InstantiatePencil()

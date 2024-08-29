@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2151685946643261121, guid: c73f9ededb02e224bbafffee538082d0, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2271966204501988195, guid: c73f9ededb02e224bbafffee538082d0, type: 3}
       propertyPath: m_Name
       value: Penicl Variant

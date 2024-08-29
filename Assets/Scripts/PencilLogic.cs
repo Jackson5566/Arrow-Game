@@ -14,14 +14,14 @@ public class PencilLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Pencil"))
         {
             _animator.SetTrigger("destroyed");
-            GameMode.Instance.OnLose();
+            collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
         }
 
         if (collision.gameObject.CompareTag("Diana"))
         {
-            collision.gameObject.GetComponent<DianaLogic>().OnCollider();
+            collision.gameObject.GetComponent<AbstractDianaLogic>().OnCollider(transform);
             transform.SetParent(collision.transform);
-            Destroy(GetComponent<PencilMovement>());
+            Destroy(GetComponent<PlayerMovement>());
             Destroy(this);
         }
     }

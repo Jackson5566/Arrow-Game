@@ -92,13 +92,22 @@ public class DianaBoss : GameMode
         }
     }
 
+    protected override void OnCollider(Transform obj)
+    {
+        player.counter.Add();
+    }
+
+    protected override void OnNotCollider()
+    {
+        player.counter.Rest();
+    }
+
     protected override void Start()
     {
         base.Start();
         currentLevel = 0;
 
         SetBoss(previousBossIndex: 0);
-        SceneTransitions("transition_start");
 
         currentBoss.Start();
     }
@@ -174,7 +183,6 @@ public class DianaBoss : GameMode
     public override void OnLose()
     {
         _isLose = true;
-        SceneTransitions();
         Invoke("ResetScene", 1.5f);
     }
 

@@ -1,4 +1,5 @@
 using PencilGame;
+using Throw.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,9 +31,22 @@ public abstract class GameMode : Service<GameMode>
 
     [SerializeField] public Animator[] _sceneTransitions;
 
+    [SerializeField] protected AbstractDianaLogic _dianaLogic;
     public Player player;
 
     public string gameName;
+
+    private void OnEnable()
+    {
+        _dianaLogic.onCollider += OnCollider;
+        _dianaLogic.onNotCollider += OnNotCollider;
+    }
+
+    private void OnDisable()
+    {
+        _dianaLogic.onCollider -= OnCollider;
+        _dianaLogic.onNotCollider -= OnNotCollider;
+    }
 
     protected override void Awake()
     {
@@ -53,6 +67,11 @@ public abstract class GameMode : Service<GameMode>
     protected abstract void OnCounter();
     public abstract void OnWin();
     public abstract void OnLose();
+    protected abstract void OnCollider(Transform obj);
+    protected abstract void OnNotCollider();
+
+    //public abstract void OnPencilCollider();
+    //public abstract void OnPencilNotCollider();
 
     protected void SceneTransitions(string trigger = "transition")
     {
@@ -70,20 +89,9 @@ public abstract class GameMode : Service<GameMode>
         }
     }
 
-    private void ResetScene()
+    protected void ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneLoader.Instance.LoadAsync(SceneManager.GetActiveScene().name);
     }
 
-    //public void AddPlayerPoint()
-    //{
-    //    playerCounter.Add();
-    //    OnCounter();
-    //}
-
-    //public void RestPlayerPoint()
-    //{
-    //    playerCounter.Rest();
-    //    OnCounter();
-    //}
 }

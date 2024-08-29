@@ -22,7 +22,7 @@ public class Multicolor : MonoBehaviour
         timePassed += Time.deltaTime; 
         if (timePassed >= time2Pass)
         {
-            chameleon.Change();
+            chameleon.ChangeColor();
             timePassed = 0;
             NewTime();
         }

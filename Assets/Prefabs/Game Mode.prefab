@@ -48,4 +48,6 @@ MonoBehaviour:
   _sceneTransitions:
   - {fileID: 0}
   - {fileID: 0}
-  level: 0
+  player: {fileID: 0}
+  gameName: 
+  maxLevel: 2

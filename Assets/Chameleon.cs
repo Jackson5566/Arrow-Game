@@ -21,7 +21,7 @@ public class Chameleon : MonoBehaviour
 
     public Skin skin;
 
-    public void Change(float alpha = 1)
+    public void ChangeColor(float alpha = 1)
     {
         int color = GetRandomColor();
         currentColor = (Color)color;

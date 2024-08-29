@@ -22,6 +22,14 @@ public class MultiplayerGameMode : GameMode
 
     bool isStarted;
 
+    protected override void OnCollider(Transform obj)
+    {
+    }
+
+    protected override void OnNotCollider()
+    {
+    }
+
     protected override void Start()
     {
         base.Start();
