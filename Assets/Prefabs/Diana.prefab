@@ -115,9 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5516167907977712306}
-  - component: {fileID: 3966947643872751185}
   - component: {fileID: 5582425615004100570}
-  - component: {fileID: 4150388095877344585}
+  - component: {fileID: 3094044978251978786}
+  - component: {fileID: 8166406791598671255}
   m_Layer: 0
   m_Name: Diana
   m_TagString: Diana
@@ -141,27 +141,6 @@ Transform:
   - {fileID: 4081582425994731642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &3966947643872751185
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738689751879162224}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3562d70ecef4d0344a3fb26c918045cc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5582425615004100570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +157,28 @@ MonoBehaviour:
   _speedModifier: 0
   _time2ModifierMax: 0
   _speedModifierTime: 0
---- !u!114 &4150388095877344585
+--- !u!95 &3094044978251978786
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738689751879162224}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a67f9f8a74da0546b2e56cebfc521cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8166406791598671255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,8 +187,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1738689751879162224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5465d07755f41044ba0d9ffeb6e8bc42, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6dbc6b2c0cfcb428b4af3628f76757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 0}
-  diana: {fileID: 0}
+  positiveText: {fileID: 0}
+  effects: {fileID: 0}
+  _activeEffects: 0
+  _changeDirection: 1
+  dianaAnimator: {fileID: 0}

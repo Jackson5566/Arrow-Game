@@ -71,7 +71,7 @@ public class DianaBoss : GameMode
     private Boss currentBoss;
 
     private int maxLevel = 3;
-    public static int currentLevel;
+    public static int level;
 
     public PlayableDirector finalBossTimeline;
 
@@ -105,7 +105,7 @@ public class DianaBoss : GameMode
     protected override void Start()
     {
         base.Start();
-        currentLevel = 0;
+        level = 0;
 
         SetBoss(previousBossIndex: 0);
 
@@ -131,21 +131,23 @@ public class DianaBoss : GameMode
 
     private void SetBoss(int previousBossIndex)
     {
-        currentBoss = boss[currentLevel];
+        currentBoss = boss[level];
 
         AddBossEvents();
 
-        if (currentLevel >= 0) 
-            boss[currentLevel + previousBossIndex].Diana.SetActive(false);
+        if (level >= 0) 
+            boss[level + previousBossIndex].Diana.SetActive(false);
         currentBoss.Diana.SetActive(true);
+
+        _dianaLogic = currentBoss.Diana.GetComponent<AbstractDianaLogic>();
     }
     private void NewBoss()
     {
-        if (currentLevel < maxLevel)
+        if (level < maxLevel)
         {
             ClearBossEvents();
 
-            currentLevel += 1;
+            level += 1;
             SetBoss(previousBossIndex: -1);
         }
 
@@ -157,11 +159,11 @@ public class DianaBoss : GameMode
 
     private void PreviousBoss()
     {
-        if (currentLevel > 0)
+        if (level > 0)
         {
             ClearBossEvents();
 
-            currentLevel -= 1;
+            level -= 1;
             SetBoss(previousBossIndex: 1);
         }
     }
@@ -183,7 +185,7 @@ public class DianaBoss : GameMode
     public override void OnLose()
     {
         _isLose = true;
-        Invoke("ResetScene", 1.5f);
+        ResetScene();
     }
 
 }

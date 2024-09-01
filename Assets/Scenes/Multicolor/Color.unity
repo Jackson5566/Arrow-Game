@@ -155,9 +155,10 @@ MonoBehaviour:
   _sceneTransitions:
   - {fileID: 809412980}
   - {fileID: 1882268624}
-  _dianaLogic: {fileID: 0}
+  _dianaLogic: {fileID: 809412987}
   player: {fileID: 7863414693294767160}
   gameName: Multicolor
+  currentLevel: 0
   boss:
   - Diana: {fileID: 809412969}
     eyes:
@@ -764,7 +765,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9a187b8d0e7a42d4cab5e11d9921a38a, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4150388095877344585, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5516167907977712306, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
@@ -788,7 +790,7 @@ PrefabInstance:
       addedObject: {fileID: 645436340}
     - targetCorrespondingSourceObject: {fileID: 1738689751879162224, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 645436346}
+      addedObject: {fileID: 645436350}
   m_SourcePrefab: {fileID: 100100000, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
 --- !u!4 &645436337 stripped
 Transform:
@@ -889,7 +891,7 @@ MonoBehaviour:
   skin:
     spriteColor: {r: 0, g: 0, b: 0, a: 0}
     selectedColor: 0
---- !u!114 &645436346
+--- !u!114 &645436350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -898,9 +900,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 645436339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89f04cd5d9942f4382e89355810ffaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6dbc6b2c0cfcb428b4af3628f76757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positiveText: {fileID: 0}
+  effects: {fileID: 2072975926496097788}
+  _activeEffects: 1
+  _changeDirection: 0
 --- !u!1001 &660207140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1142,11 +1148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4278190098
       objectReference: {fileID: 0}
     - target: {fileID: 4936494141468771295, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_Color.b
@@ -1781,7 +1787,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b1f62cfbb124fe2489be29c7f1169d15, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4150388095877344585, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5516167907977712306, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
@@ -1808,7 +1815,7 @@ PrefabInstance:
       addedObject: {fileID: 1283836857}
     - targetCorrespondingSourceObject: {fileID: 1738689751879162224, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1283836864}
+      addedObject: {fileID: 1283836868}
   m_SourcePrefab: {fileID: 100100000, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
 --- !u!4 &1283836854 stripped
 Transform:
@@ -1939,7 +1946,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.86
---- !u!114 &1283836864
+--- !u!114 &1283836868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1948,9 +1955,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283836856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f89f04cd5d9942f4382e89355810ffaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6dbc6b2c0cfcb428b4af3628f76757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positiveText: {fileID: 0}
+  effects: {fileID: 2072975926496097788}
+  _activeEffects: 1
+  _changeDirection: 0
 --- !u!1 &1310442394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,6 +2376,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1269289376}
+    - target: {fileID: 1871279181838887349, guid: 79cba503488bc4a43ab300235d517746, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeColor
+      objectReference: {fileID: 0}
     - target: {fileID: 2426854572359400772, guid: 79cba503488bc4a43ab300235d517746, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -14,7 +14,9 @@ public class PencilLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Pencil"))
         {
             _animator.SetTrigger("destroyed");
-            collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
+            GameMode.Instance.OnLose();
+
+            //collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
         }
 
         if (collision.gameObject.CompareTag("Diana"))

@@ -12,16 +12,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Multiplayer/Multiplayer.unity
     guid: 16433d392c02bec4fbdde582e2d5e047
   - enabled: 0
-    path: Assets/Scenes/Normal/Circle.unity
+    path: Assets/Scenes/Normal/Normal 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Normal/Square.unity
+    path: Assets/Scenes/Normal/Normal 2.unity
     guid: 4c6074f2c060f374a80f7e4c53c5ca8e
   - enabled: 0
-    path: Assets/Scenes/Normal/Hexagon.unity
+    path: Assets/Scenes/Normal/Normal 4.unity
     guid: 765a8a2c65549e44797aecb8a198e119
   - enabled: 0
-    path: Assets/Scenes/Normal/Triangle.unity
+    path: Assets/Scenes/Normal/Normal 3.unity
     guid: dafd0ca0336743347a43689dcc5aaca0
   - enabled: 0
     path: Assets/Scenes/Multicolor/Color.unity

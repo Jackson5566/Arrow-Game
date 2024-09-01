@@ -33,7 +33,6 @@ public class SceneTransition : PerssistanService<SceneTransition>
 
     public void PanelFadeIn()
     {
-        print("Pa tras");
         panelFade.SetTrigger("end");
     }
 }

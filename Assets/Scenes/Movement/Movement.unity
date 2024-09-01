@@ -379,11 +379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4278190098
       objectReference: {fileID: 0}
     - target: {fileID: 6171722605383719318, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_Pivot.x
@@ -790,7 +790,7 @@ MonoBehaviour:
   - {fileID: 436217122}
   - {fileID: 22286303}
   - {fileID: 1963371458}
-  _speed: 5
+  speed: 0
   _getRandom: 1
 --- !u!1001 &1714911491979479848
 PrefabInstance:

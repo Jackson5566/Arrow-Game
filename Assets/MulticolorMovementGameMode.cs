@@ -1,3 +1,4 @@
+using Throw.Core;
 using UnityEngine;
 
 
@@ -12,7 +13,7 @@ public class MulticolorMovementGameMode : GameMode
 
     protected override void OnNotCollider()
     {
-        print("Perdío");
+        OnLose();
     }
 
     protected override void Start()
@@ -22,12 +23,13 @@ public class MulticolorMovementGameMode : GameMode
 
     public override void OnLose()
     {
-        print("Perdió");
+        base.OnLose();
     }
 
     public override void OnWin()
     {
-        print("Ha ganado");
+        SaveLevel();
+        LoadNextLevel();
     }
 
     protected override void OnCounter()

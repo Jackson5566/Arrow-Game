@@ -202,6 +202,8 @@ MonoBehaviour:
   _dianaLogic: {fileID: 809412995}
   player: {fileID: 7863414693294767160}
   gameName: Movement
+  currentLevel: 3
+  _isFinalLevel: 0
   _dianaOscilation: {fileID: 809412988}
 --- !u!1 &210896899
 GameObject:
@@ -534,6 +536,7 @@ MonoBehaviour:
   effects: {fileID: 2072975926496097788}
   _activeEffects: 1
   _changeDirection: 0
+  dianaAnimator: {fileID: 0}
 --- !u!1001 &832930027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -576,11 +579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4278190098
       objectReference: {fileID: 0}
     - target: {fileID: 4936494141468771295, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_Color.b
@@ -1629,6 +1632,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7863414693294767160}
+    - target: {fileID: 4466925863536503301, guid: 212c615859e8f7b47bcf2f8be1f9818f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6593456327819305109, guid: 212c615859e8f7b47bcf2f8be1f9818f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1816,6 +1823,8 @@ MonoBehaviour:
   _maxLaunchs: 2
   byTime: 0
   time2Pass: 0
+  _randomTime: 0
+  _maxRandomTime: 0
 --- !u!114 &7863414693294767163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 881605452859959567, guid: 7302a45e931bd8b4ba7c66ab5aaf3aec, type: 3}

@@ -13,17 +13,13 @@ MonoBehaviour:
   m_Name: CircleColor
   m_EditorClassIdentifier: 
   skinList:
-  - spriteColor: {r: 0, g: 0, b: 0, a: 1}
-    selectedColor: 0
   - spriteColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
-    selectedColor: 1
+    selectedColor: 0
   - spriteColor: {r: 0.42452493, g: 1, b: 0.14509803, a: 1}
-    selectedColor: 2
+    selectedColor: 1
   - spriteColor: {r: 0.96382976, g: 1, b: 0.24056602, a: 1}
-    selectedColor: 3
+    selectedColor: 2
   - spriteColor: {r: 0.8113208, g: 0.003826994, b: 0.6989375, a: 1}
-    selectedColor: 4
-  - spriteColor: {r: 1, g: 0.23921567, b: 0.7455987, a: 1}
-    selectedColor: 5
+    selectedColor: 3
   - spriteColor: {r: 0.23921567, g: 0.4714396, b: 1, a: 1}
-    selectedColor: 6
+    selectedColor: 4

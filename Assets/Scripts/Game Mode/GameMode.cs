@@ -36,6 +36,9 @@ public abstract class GameMode : Service<GameMode>
 
     public string gameName;
 
+    public int currentLevel;
+    [SerializeField] protected bool _isFinalLevel;
+
     private void OnEnable()
     {
         _dianaLogic.onCollider += OnCollider;
@@ -66,7 +69,12 @@ public abstract class GameMode : Service<GameMode>
 
     protected abstract void OnCounter();
     public abstract void OnWin();
-    public abstract void OnLose();
+    public virtual void OnLose()
+    {
+        _isLose = true;
+        DeadAnimations();
+        Invoke(nameof(ResetScene), 1);
+    }
     protected abstract void OnCollider(Transform obj);
     protected abstract void OnNotCollider();
 
@@ -83,10 +91,8 @@ public abstract class GameMode : Service<GameMode>
 
     protected void DeadAnimations()
     {
-        foreach (Animator animator in _deadAnimators)
-        {
-            animator.SetTrigger("dead");
-        }
+        _dianaLogic.GetComponent<Animator>().SetTrigger("dead");
+        Camera.main.GetComponent<Animator>().SetTrigger("dead");
     }
 
     protected void ResetScene()
@@ -94,4 +100,35 @@ public abstract class GameMode : Service<GameMode>
         SceneLoader.Instance.LoadAsync(SceneManager.GetActiveScene().name);
     }
 
+    public void LoadNextLevel()
+    {
+        try
+        {
+            if (!_isFinalLevel)
+                LoadLevel($"{TCache.levelBlock.name} {currentLevel + 1}");
+
+            else
+            {
+                LoadLevel("Main");
+            }
+        }
+
+        catch
+        {
+            Debug.LogWarning("Doesn't have next level");
+        }
+    }
+
+    public void LoadLevel(string sceneName)
+    {
+        SceneLoader.Instance.LoadAsync(sceneName);
+    }
+
+    public void SaveLevel()
+    {
+        if (PlayerPrefs.GetInt(TCache.levelBlock.storageRoute) < currentLevel)
+        {
+            PlayerPrefs.SetInt(TCache.levelBlock.storageRoute, currentLevel);
+        }
+    }
 }

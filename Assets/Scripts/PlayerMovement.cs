@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
         set
         {
             _pos = value;
-            print(_pos);
-            print(_pos.normalized);
         }
     }
 

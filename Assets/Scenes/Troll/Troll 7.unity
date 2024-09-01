@@ -233,6 +233,8 @@ MonoBehaviour:
   _dianaLogic: {fileID: 809412995}
   player: {fileID: 7863414693294767160}
   gameName: Movement
+  currentLevel: 7
+  _isFinalLevel: 0
   _dianaOscilation: {fileID: 809412988}
 --- !u!1 &113166908
 GameObject:
@@ -259,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 113166908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.76, y: -4.83, z: 0}
+  m_LocalPosition: {x: 1.64, y: -2.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -545,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 628436950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.59, y: -5.04, z: 0}
+  m_LocalPosition: {x: -2.73, y: -2.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -642,7 +644,7 @@ MonoBehaviour:
   - {fileID: 2107593539}
   - {fileID: 628436951}
   - {fileID: 113166909}
-  speed: 12
+  speed: 13
   _getRandom: 1
 --- !u!114 &809412995
 MonoBehaviour:
@@ -660,6 +662,7 @@ MonoBehaviour:
   effects: {fileID: 2072975926496097788}
   _activeEffects: 1
   _changeDirection: 0
+  dianaAnimator: {fileID: 0}
 --- !u!1001 &832930027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -702,11 +705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 4731619245116646336, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4278190098
       objectReference: {fileID: 0}
     - target: {fileID: 4936494141468771295, guid: 22dd1f443123fbc4b9b31a09f72056ca, type: 3}
       propertyPath: m_Color.b
@@ -1759,6 +1762,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7863414693294767160}
+    - target: {fileID: 4466925863536503301, guid: 212c615859e8f7b47bcf2f8be1f9818f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6593456327819305109, guid: 212c615859e8f7b47bcf2f8be1f9818f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1943,11 +1950,13 @@ MonoBehaviour:
   - {fileID: 26864019}
   - {fileID: 115171895}
   _pencilLauncher: {fileID: 7863414693294767163}
-  _randomLaunchs: 0
-  _maxRandomLaunchs: 0
+  _randomLaunchs: 1
+  _maxRandomLaunchs: 5
   _maxLaunchs: 0
-  byTime: 1
+  byTime: 0
   time2Pass: 2
+  _randomTime: 0
+  _maxRandomTime: 0
 --- !u!114 &7863414693294767163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 881605452859959567, guid: 7302a45e931bd8b4ba7c66ab5aaf3aec, type: 3}

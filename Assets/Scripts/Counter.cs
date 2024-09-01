@@ -54,4 +54,9 @@ public class Counter : MonoBehaviour
     {
         score += 1;
     }
+
+    public bool IsInitial()
+    {
+        return score == initialCounter;
+    }
 }

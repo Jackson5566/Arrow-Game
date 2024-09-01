@@ -87,12 +87,13 @@ public class PositionChanger : MonoBehaviour
     public void ChangePosition()
     {
         transform.position = _points[_currentIndex].position;
-        _currentIndex++;
 
         if (_currentIndex == _points.Length - 1)
         {
             _currentIndex = 0;
         }
+
+        _currentIndex++;
 
         float euler = Mathf.Atan2(- transform.position.y,  - transform.position.x);
         print("Angulo: " + euler * Mathf.Rad2Deg);

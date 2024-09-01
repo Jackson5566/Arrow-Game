@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class World : MonoBehaviour
 {
     public static float scale;
+    public static Func<Transform> GetTransform;
+
 
     void Awake()
     {
@@ -13,5 +16,7 @@ public class World : MonoBehaviour
         scale = currentAspectRatio / referenceAspectRatio;
 
         transform.localScale = new Vector3(scale, scale, 1f);
+
+        GetTransform = () => transform;
     }
 }

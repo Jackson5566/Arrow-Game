@@ -2,6 +2,7 @@ using PencilGame;
 using System;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class AbstractDianaLogic : MonoBehaviour
 {
     private Diana diana;
@@ -17,6 +18,7 @@ public class AbstractDianaLogic : MonoBehaviour
     [SerializeField] private bool _activeEffects;
     [SerializeField] private bool _changeDirection;
 
+    public Animator dianaAnimator;
 
     private void Start()
     {
@@ -37,7 +39,8 @@ public class AbstractDianaLogic : MonoBehaviour
 
     public virtual void NotCollider()
     {
-        onNotCollider();
+        if (onNotCollider != null)
+            onNotCollider();
     }
 }
 
