@@ -7,7 +7,9 @@ public class PositiveText : Service<PositiveText>
     private Animator _animator;
     private TextMeshProUGUI _textUI;
 
-    [SerializeField] private string[] _messages;
+    [SerializeField] private string[] _positiveTexts;
+    [SerializeField] private string[] _negativeTexts;
+
 
     private void Start()
     {
@@ -15,13 +17,23 @@ public class PositiveText : Service<PositiveText>
         _textUI = GetComponent<TextMeshProUGUI>();
     }
 
-    public void Show()
+    public void ShowPositiveText()
     {
-        string text = _messages[Random.Range(0, _messages.Length)];
+        SelectText(_positiveTexts);
+    }
+
+    public void ShowNegativeText()
+    {
+        SelectText(_negativeTexts);
+    }
+
+    private void SelectText(string[] texts)
+    {
+        string text = texts[Random.Range(0, texts.Length)];
 
         _textUI.text = text;
 
         _animator.SetTrigger("show");
-    }
 
+    }
 }

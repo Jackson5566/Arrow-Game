@@ -492,15 +492,15 @@ PrefabInstance:
       objectReference: {fileID: -634457606, guid: e575b712f4348f54686a60e09430d2be, type: 3}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.23921569
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_SortingOrder
@@ -677,11 +677,11 @@ MonoBehaviour:
   _spriteRenderers:
   - {fileID: 471828815402847973}
   - {fileID: 4351540580763941896}
-  currentColor: 0
+  currentColor: 4
   colorSO: {fileID: 11400000, guid: a408996fb34ac4b4e8ec4f2ca1a46673, type: 2}
   skin:
-    spriteColor: {r: 0, g: 0, b: 0, a: 0}
-    selectedColor: 0
+    spriteColor: {r: 0.23921569, g: 0.47058824, b: 1, a: 0}
+    selectedColor: 4
 --- !u!114 &6358612885526611833
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,24 @@
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+
+public enum Theme
+{
+    Dark,
+    Light
+}
 
 public static class DataStorage
 {
+    public static void SaveTheme(Theme theme)
+    {
+        PlayerPrefs.SetInt("Theme", (int)theme);
+    }
+
+    public static Theme GetTheme()
+    {
+        return (Theme)PlayerPrefs.GetInt("Theme", 0);
+    }
+
     public static void SaveGameName(string gameName)
     {
         PlayerPrefs.SetString("GameName", gameName);

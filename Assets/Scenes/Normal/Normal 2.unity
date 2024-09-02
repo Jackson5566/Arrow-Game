@@ -144,15 +144,15 @@ PrefabInstance:
       objectReference: {fileID: -162721884, guid: 39aef30e2d586e648a244a5253826d28, type: 3}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.23921569
       objectReference: {fileID: 0}
     - target: {fileID: 1261484168768011458, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e4f8ffa1541531b49a73643a86e1187e, type: 2}
+    - target: {fileID: 7383134761120689750, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e227c2f81b712eb4db58093f0fe43d3f, type: 2}
     - target: {fileID: 8166406791598671255, guid: 74715bce82a991c41b29f600db9a5428, type: 3}
       propertyPath: dianaAnimator
       value: 

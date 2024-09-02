@@ -95,11 +95,18 @@ public class DianaBoss : GameMode
     protected override void OnCollider(Transform obj)
     {
         player.counter.Add();
+        PositiveText.Instance.ShowPositiveText();
     }
 
     protected override void OnNotCollider()
     {
         player.counter.Rest();
+        PositiveText.Instance.ShowNegativeText();
+    }
+
+    private void OnEnable()
+    {
+        
     }
 
     protected override void Start()
@@ -140,6 +147,9 @@ public class DianaBoss : GameMode
         currentBoss.Diana.SetActive(true);
 
         _dianaLogic = currentBoss.Diana.GetComponent<AbstractDianaLogic>();
+
+        _dianaLogic.onCollider += OnCollider;
+        _dianaLogic.onNotCollider += OnNotCollider;
     }
     private void NewBoss()
     {

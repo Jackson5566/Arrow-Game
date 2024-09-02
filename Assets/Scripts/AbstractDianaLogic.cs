@@ -27,7 +27,8 @@ public class AbstractDianaLogic : MonoBehaviour
 
     public virtual void OnCollider(Transform obj)
     {
-        onCollider(obj);
+        if (onCollider != null) 
+            onCollider(obj);
 
         if (_activeEffects)
             effects.InstantiateConfetti(obj.position);

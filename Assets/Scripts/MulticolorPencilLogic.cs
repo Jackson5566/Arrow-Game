@@ -37,27 +37,30 @@ public class MulticolorPencilLogic : MonoBehaviour
 
         else
         {
+
+            Color color = Color.Blue;
+
             try
             {
-                Color color = collision.gameObject.GetComponent<Chameleon>().skin.selectedColor;
-
-                if (color == _skin.selectedColor)
-                {
-                    collision.gameObject.GetComponent<AbstractDianaLogic>().OnCollider(transform);
-                    transform.SetParent(collision.transform);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
-                    _animator.SetTrigger("destroyed");
-                    Invoke(nameof(DestroyGameObject), 1.5f);
-                }
+                color = collision.gameObject.GetComponent<Chameleon>().skin.selectedColor;
             }
 
-            catch (NullReferenceException ex)
+            catch
             {
-                Debug.LogError(ex);
+                Debug.LogWarning("Chamaleon component is missing !!!");
+            }
+
+            if (color == _skin.selectedColor)
+            {
+                collision.gameObject.GetComponent<AbstractDianaLogic>().OnCollider(transform);
+                transform.SetParent(collision.transform);
+                Destroy(gameObject);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<AbstractDianaLogic>().NotCollider();
+                _animator.SetTrigger("destroyed");
+                Invoke(nameof(DestroyGameObject), 1.5f);
             }
         }
     }

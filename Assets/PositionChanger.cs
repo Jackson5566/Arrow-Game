@@ -96,7 +96,6 @@ public class PositionChanger : MonoBehaviour
         _currentIndex++;
 
         float euler = Mathf.Atan2(- transform.position.y,  - transform.position.x);
-        print("Angulo: " + euler * Mathf.Rad2Deg);
 
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, euler * Mathf.Rad2Deg - 90);
     }

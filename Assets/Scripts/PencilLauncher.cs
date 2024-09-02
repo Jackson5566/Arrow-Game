@@ -60,24 +60,30 @@ namespace PencilGame
                     {
                         Launch();
                     }
-
-                    void Launch()
-                    {
-                        _time2Launch = _waitingSeconds;
-                        Pencil pencil = InstantiatePencil();
-                        PlayerMovement pen = pencil.GetComponent<PlayerMovement>();
-                        pen.speed = speed;
-                        pen.pos = new Vector2(-transform.position.x, -transform.position.y);
-
-                        OnLaunching();
-
-                        if (onLaunching != null)
-                            onLaunching();
-                    }
-
                 }
             }
+
+#if UNITY_EDITOR
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Launch();
+            }
+#endif
         }
+        void Launch()
+        {
+            _time2Launch = _waitingSeconds;
+            Pencil pencil = InstantiatePencil();
+            PlayerMovement pen = pencil.GetComponent<PlayerMovement>();
+            pen.speed = speed;
+            pen.pos = new Vector2(-transform.position.x, -transform.position.y);
+
+            OnLaunching();
+
+            if (onLaunching != null)
+                onLaunching();
+        }
+
 
 
         bool IsTouchOverUI(Touch touch)
